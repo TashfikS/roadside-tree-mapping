@@ -267,7 +267,7 @@ for a, t in zip(axs[:4], ['Street photos', 'Trunk base', 'Range from camera heig
     a.set_title(t, fontsize=7.5, loc='left', pad=4)
 for k in range(4):
     b0, b1 = axs[k].get_position(), axs[k + 1].get_position(); arrow(ga, b0.x1 + 0.002, b1.x0 - 0.002, b0.y0 + b0.height / 2)
-ga.text(0.012, 0.94, 'Where are roadside trees missing? Street photos → validated tree map → empty kerb length → where to plant first',
+ga.text(0.012, 0.94, 'Street photos → validated tree map → empty kerb length → where to plant first',
         fontsize=7.5, fontweight='bold', color=C_OURS)
 ga.savefig('graphical_abstract.png', dpi=300); plt.close(ga)
 print('ok', len(Tir), len(Tpr), {k: (len(v['pred']), len(v['inv'])) for k, v in gaps.items()})

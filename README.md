@@ -2,7 +2,7 @@
 
 Code, labels, protocol files and results for the paper
 
-> **Where are roadside trees missing? Validated tree and planting-gap maps from street-level images, with an application to the Dhaka–Chattogram highway.**
+> **Validated roadside tree and planting-gap maps from street-level images: trunk-base geolocation and an application to the Dhaka–Chattogram highway.**
 > S.M. Tasfik Us Salehin, Fatema Mehnaz, Anima Zaman, Kanak Barua, Md Shahriar Mahbub.
 > Department of Computer Science and Engineering, Ahsanullah University of Science and Technology, Dhaka.
 
