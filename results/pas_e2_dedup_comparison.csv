@@ -1,0 +1,3 @@
+setting,AP_4m,max_recall,n_trees,gate_median_matched10,p90_matched10,frac_within2_of_matched4
+"cut 15 m, merge 3 m, >=1 view (previous)",0.4572,0.8819,19902,3.0,7.59,0.545
+"cut 15 m, merge 5 m, >=2 views (chosen on val)",0.4906,0.7945,10771,2.13,6.51,0.599

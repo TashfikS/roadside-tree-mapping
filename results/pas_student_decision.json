@@ -1,0 +1,37 @@
+{
+ "val_best": [
+  {
+   "detector": "current",
+   "cut": 15,
+   "radius": 5,
+   "min_views": 2,
+   "AP_4m": 0.4999,
+   "max_recall": 0.7834,
+   "n_trees": 1702,
+   "gate_median_matched10": 2.25,
+   "p90_matched10": 6.18,
+   "frac_within2_of_matched4": 0.545
+  },
+  {
+   "detector": "student",
+   "cut": 15,
+   "radius": 5,
+   "min_views": 1,
+   "AP_4m": 0.6368,
+   "max_recall": 0.8114,
+   "n_trees": 1962,
+   "gate_median_matched10": 2.24,
+   "p90_matched10": 6.82,
+   "frac_within2_of_matched4": 0.591
+  }
+ ],
+ "decision": "student replaces current (higher validation AP@4 m)",
+ "test_student": {
+  "AP_4m": 0.6405,
+  "max_recall": 0.8513,
+  "n_trees": 11750,
+  "gate_median_matched10": 2.16,
+  "p90_matched10": 6.92,
+  "frac_within2_of_matched4": 0.619
+ }
+}

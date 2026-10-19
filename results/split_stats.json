@@ -1,0 +1,22 @@
+{
+ "N": 1765,
+ "consecutive_pairs": 1754,
+ "ham_consec_median": 119.0,
+ "ham_random_median": 126.0,
+ "corr_consec_median": 0.33761903643608093,
+ "corr_random_median": 0.18910539150238037,
+ "near_dup_pairs": 6,
+ "imgs_with_near_dup": 12,
+ "test_imgs_with_train_near_dup": 0,
+ "test_imgs_nearest_train_corr_median": 0.6803303360939026,
+ "train_imgs_nearest_other_train_corr_median": 0.7063446640968323,
+ "n_groups": 72,
+ "largest_group": 75,
+ "train_images": 1244,
+ "train_boxes": 3761,
+ "val_images": 245,
+ "val_boxes": 761,
+ "test_images": 276,
+ "test_boxes": 789,
+ "new_split_test_imgs_with_train_near_dup": 0
+}

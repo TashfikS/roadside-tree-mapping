@@ -1,0 +1,5 @@
+,n,median_abs_m,mean_abs_m,median_signed_m,within_2m_pct,median_rel_pct
+"ours, fixed settings",22.0,2.34,2.63,-2.24,41.0,21.2
+"ours, leave-one-out",22.0,1.42,2.29,-0.02,68.0,10.5
+"Depth Anything V2 L, as is",22.0,4.15,5.51,4.15,18.0,32.1
+"Depth Anything V2 L, leave-one-out",22.0,2.29,2.8,-0.1,45.0,16.9

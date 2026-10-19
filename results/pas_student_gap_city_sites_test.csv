@@ -1,0 +1,10 @@
+site_type,S,n_sites,in_pred_gap,in_inventory_gap,chance
+city vacant planting sites,10,313,0.527,0.655,0.308
+city vacant planting sites,12,313,0.415,0.505,0.269
+city vacant planting sites,15,313,0.313,0.313,0.23
+"city ""no room for replant"" sites",10,191,0.471,0.555,0.308
+"city ""no room for replant"" sites",12,191,0.393,0.445,0.269
+"city ""no room for replant"" sites",15,191,0.293,0.335,0.23
+stumps,10,82,0.354,0.427,0.308
+stumps,12,82,0.28,0.305,0.269
+stumps,15,82,0.232,0.134,0.23

@@ -1,0 +1,9 @@
+{
+ "hwa_s0": 0.561,
+ "hwb_s0": 0.594,
+ "hwb_s1": 0.626,
+ "hwb_s2": 0.563,
+ "hwc_s0": 0.556,
+ "n_photos": 44,
+ "source": "results_master.csv (row: highway validation box AP50: A / B (3 runs) / C self-training), which was built from kout/*/results_*.json (hwval.box_AP50)"
+}

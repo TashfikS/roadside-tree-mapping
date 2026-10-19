@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+work/
+data/external/
+weights/*.pt
+*.pt
+figures/[vh]f_*.png
+.ipynb_checkpoints/
+.DS_Store

@@ -1,0 +1,16 @@
+{
+ "k": 0.44,
+ "setting": {
+  "cut": 15,
+  "radius": 5,
+  "min_views": 1
+ },
+ "test": {
+  "AP_4m": 0.6219,
+  "max_recall": 0.8476,
+  "n_trees": 12530,
+  "gate_median_matched10": 2.41,
+  "p90_matched10": 7.17,
+  "frac_within2_of_matched4": 0.579
+ }
+}

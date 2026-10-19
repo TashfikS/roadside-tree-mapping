@@ -1,0 +1,40 @@
+{
+ "photos_in_map": 11075,
+ "trips_in_map": 40,
+ "detections_used": 3090,
+ "keypoint_share": 0.5802588996763755,
+ "trees": 2536,
+ "pieces_covered": 2526,
+ "covered_km": 126.3,
+ "empty_share_single_trip": 0.7496041171813144,
+ "empty_share_combined": 0.7024940617577198,
+ "trees_per_km_median": 12.0,
+ "e8": {
+  "n_pairs": 1131,
+  "n_pieces": 345,
+  "spearman": 0.10885586252022945,
+  "median_abs_diff": 1.0,
+  "mean_trees_per_100m": 1.1843501326259946,
+  "km_secondary": {
+   "n_pairs": 111,
+   "n_stretches": 35,
+   "spearman": 0.17192005330146182,
+   "median_abs_diff_per_km": 6.0,
+   "median_trees_per_km": 4.0
+  },
+  "km_same_direction": {
+   "n_pairs": 59,
+   "spearman": 0.007794739421252607,
+   "median_abs_diff_per_km": 4.2631578947368425
+  },
+  "km_opposite_direction": {
+   "n_pairs": 52,
+   "spearman": 0.3057968731270835,
+   "median_abs_diff_per_km": 9.214285714285715
+  },
+  "trips_by_direction": {
+   "1": 26,
+   "-1": 14
+  }
+ }
+}

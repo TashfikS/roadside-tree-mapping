@@ -1,0 +1,7 @@
+,AP_4m,max_recall,n_trees,median_m10,p90_m10
+Mapillary (chosen setting),0.021,0.133,1224.0,5.24,8.53
+"Mapillary, level camera (comparison)",0.017,0.147,2154.0,6.02,8.98
+"Mapillary, camera height 1.3 m",0.022,0.141,1383.0,5.28,8.69
+"Mapillary, camera height 1.9 m",0.018,0.115,1036.0,5.35,8.69
+Chance (random bearing),0.008,0.081,1299.0,6.12,9.14
+"Google panoramas (E2, same zone)",0.464,0.742,2674.0,2.31,6.71

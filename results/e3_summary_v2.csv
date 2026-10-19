@@ -1,0 +1,5 @@
+,,n,median_abs_m,mean_abs_m,median_signed_m,median_rel_pct,within_2m_pct
+all 22,fixed settings (h 1.5 m),22.0,2.34,2.63,-2.24,21.2,41.0
+single label (15),fixed settings (h 1.5 m),15.0,2.13,2.23,-1.69,17.3,47.0
+paired by author (7),fixed settings (h 1.5 m),7.0,4.11,3.48,-4.11,23.3,29.0
+all 22,leave-one-out calibrated,22.0,1.42,2.29,-0.02,10.5,68.0

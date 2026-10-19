@@ -1,0 +1,12 @@
+{
+ "run": "hwb_s0",
+ "threshold": 0.3294,
+ "val_precision_at_t": 0.8033,
+ "val_recall_at_t": 0.3289,
+ "val_photos": 44,
+ "val_boxes": 149,
+ "candidates": 2753,
+ "candidates_detected": 2162,
+ "pseudo_photos": 1123,
+ "pseudo_boxes": 1668
+}

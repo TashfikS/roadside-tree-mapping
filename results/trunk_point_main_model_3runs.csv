@@ -1,0 +1,4 @@
+run,n_matched,median_px,box_bottom_median_same_trees,better_than_box_pct,median_px_common
+s0,483,20.6,52.6,81.2,22.5
+s1,383,21.7,59.8,83.3,22.0
+s2,424,22.1,56.3,81.1,22.8

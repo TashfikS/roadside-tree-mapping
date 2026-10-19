@@ -1,0 +1,26 @@
+{
+ "model": "Qwen/Qwen3-VL-4B-Instruct",
+ "detector": "retrained (student)",
+ "threshold": 0.15203,
+ "unscored_rule": "kept (panorama missing from Kaggle copy)",
+ "val": {
+  "precision": 0.4738675958188153,
+  "unfiltered": 0.41,
+  "kept": 0.8292682926829268,
+  "n": 400
+ },
+ "test": {
+  "precision": 0.5399239543726235,
+  "unfiltered": 0.4591990364348088,
+  "gain_pp": 8.072491793781472,
+  "ci_pp": [
+   6.448078836707513,
+   9.549413860369642
+  ],
+  "kept": 0.8380327868852459,
+  "n": 3321,
+  "sides": 765,
+  "unscored": 14
+ },
+ "passA": true
+}

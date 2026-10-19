@@ -1,0 +1,43 @@
+{
+ "info": {
+  "n_raw": 61092,
+  "n_depth": 61092,
+  "n_joined": 61092,
+  "depth_point_nan": 30,
+  "depth_region_nan": 18
+ },
+ "val_best": {
+  "readout": "r_point",
+  "cut": 15,
+  "radius": 3,
+  "min_views": 1,
+  "AP_4m": 0.0115,
+  "max_recall": 0.11,
+  "n_trees": 880,
+  "gate_median_matched10": 6.07,
+  "p90_matched10": 8.37,
+  "frac_within2_of_matched4": 0.325
+ },
+ "test_depth": {
+  "AP_4m": 0.0124,
+  "max_recall": 0.1055,
+  "n_trees": 4614,
+  "gate_median_matched10": 5.99,
+  "p90_matched10": 8.22,
+  "frac_within2_of_matched4": 0.277
+ },
+ "test_ground_plane_reference": {
+  "AP_4m": 0.6405,
+  "max_recall": 0.8513,
+  "n_trees": 11750,
+  "gate_median_matched10": 2.16,
+  "p90_matched10": 6.92,
+  "frac_within2_of_matched4": 0.619
+ },
+ "range_vs_ground_plane": {
+  "n": 45569,
+  "median_abs_diff_m": 14.33,
+  "median_signed_m": 14.33,
+  "median_ratio": 2.253
+ }
+}

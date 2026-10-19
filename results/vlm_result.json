@@ -1,0 +1,35 @@
+{
+ "model": "Qwen/Qwen3-VL-4B-Instruct",
+ "threshold": 0.14034,
+ "unscored_rule": "kept (panorama missing from Kaggle copy)",
+ "val": {
+  "precision": 0.4675925925925926,
+  "unfiltered": 0.40514469453376206,
+  "kept": 0.8015873015873016,
+  "n": 311
+ },
+ "test": {
+  "precision": 0.5463659147869674,
+  "unfiltered": 0.462922966162707,
+  "gain_pp": 8.344294862426038,
+  "ci_pp": [
+   6.605677465404282,
+   10.167458603880627
+  ],
+  "kept": 0.8475894245723172,
+  "n": 2778,
+  "sides": 708,
+  "unscored": 17
+ },
+ "passA": true,
+ "questionB": {
+  "auc": 0.5258966943808491,
+  "ci": [
+   0.4774551027909845,
+   0.5752350094711546
+  ],
+  "n_vacant": 386,
+  "n_no_room": 258,
+  "report": false
+ }
+}

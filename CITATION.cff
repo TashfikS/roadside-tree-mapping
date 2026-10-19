@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the article."
+title: "Roadside tree mapping from street-level images"
+type: software
+license: MIT
+repository-code: "https://github.com/TashfikS/roadside-tree-mapping"
+authors:
+  - family-names: Salehin
+    given-names: S.M. Tasfik Us
+  - family-names: Mehnaz
+    given-names: Fatema
+  - family-names: Zaman
+    given-names: Anima
+  - family-names: Barua
+    given-names: Kanak
+  - family-names: Mahbub
+    given-names: Md Shahriar
+preferred-citation:
+  type: article
+  title: "Where are roadside trees missing? Validated tree and planting-gap maps from street-level images, with an application to the Dhaka-Chattogram highway"
+  authors:
+    - family-names: Salehin
+      given-names: S.M. Tasfik Us
+    - family-names: Mehnaz
+      given-names: Fatema
+    - family-names: Zaman
+      given-names: Anima
+    - family-names: Barua
+      given-names: Kanak
+    - family-names: Mahbub
+      given-names: Md Shahriar
+  year: 2026

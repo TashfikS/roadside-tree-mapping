@@ -1,0 +1,32 @@
+{
+ "old": {
+  "runs": [
+   "pose_s0",
+   "pose_s1",
+   "pose_s2"
+  ],
+  "mean": 0.3792,
+  "sd": 0.1184,
+  "ci95": [
+   0.2984,
+   0.4667
+  ]
+ },
+ "new": {
+  "runs": [
+   "hwb_s0",
+   "hwb_s1",
+   "hwb_s2"
+  ],
+  "mean": 0.588,
+  "sd": 0.0187,
+  "ci95": [
+   0.5084,
+   0.665
+  ]
+ },
+ "decision": "trees per km, no gap map (40-70 %)",
+ "n_trees": 356,
+ "n_photos": 83,
+ "choice": "B (windscreen augmentation); C (self-training) not higher by >= 0.02 on highway validation (0.556 vs 0.594)"
+}

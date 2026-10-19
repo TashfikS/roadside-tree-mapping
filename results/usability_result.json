@@ -1,0 +1,25 @@
+{
+ "n_train": 240,
+ "n_train_unusable": 71,
+ "n_val": 60,
+ "n_val_unusable": 16,
+ "cv_auc": {
+  "0.01": 0.884,
+  "0.1": 0.878,
+  "1": 0.869,
+  "10": 0.859
+ },
+ "C": 0.01,
+ "threshold_p_usable": 0.5533,
+ "val_auc": 0.619,
+ "val_usable_kept": 0.955,
+ "val_unusable_rejected": 0.312,
+ "test": {
+  "n": 150,
+  "n_unusable": 47,
+  "auc": 0.775,
+  "usable_accepted": 0.922,
+  "unusable_rejected": 0.447,
+  "accepted_share": 0.807
+ }
+}

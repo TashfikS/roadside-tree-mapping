@@ -1,0 +1,7 @@
+S,chain_sides,km_evaluated,plantable_km_inv,plantable_km_pred,precision,recall,F1,addable_inv,addable_pred,pearson_r_per_side,MAE_per_side,side_agreement_matched
+10,1107,138.5,24.2,36.31,0.525,0.788,0.63,3224,4513,0.818,1.7,0.994
+12,1107,138.5,20.19,31.77,0.494,0.778,0.605,2270,3327,0.783,1.4,0.994
+15,1107,138.5,16.27,27.17,0.458,0.766,0.574,1500,2335,0.758,1.1,0.994
+10 (baseline: no trees detected),1107,138.5,24.2,117.96,0.205,1.0,0.34,3224,12249,0.56,8.15,
+12 (baseline: no trees detected),1107,138.5,20.19,117.96,0.171,1.0,0.292,2270,10275,0.505,7.23,
+15 (baseline: no trees detected),1107,138.5,16.27,117.96,0.138,1.0,0.242,1500,8336,0.436,6.18,

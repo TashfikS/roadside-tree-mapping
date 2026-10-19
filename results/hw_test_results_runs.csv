@@ -1,0 +1,7 @@
+group,run,found_all,boxes_without_click_per_photo,base=guessed,base=visible,sharp_tertile=blurriest third,sharp_tertile=middle third,sharp_tertile=sharpest third,trees_in_photo=1-2,trees_in_photo=3-5,trees_in_photo=6 or more
+old,pose_s0,0.5028,0.24,0.3958,0.628,0.4,0.4747,0.5698,0.3953,0.4,0.5813
+old,pose_s1,0.2669,0.16,0.1979,0.3476,0.2706,0.3636,0.2093,0.1163,0.3364,0.2611
+old,pose_s2,0.368,0.23,0.2969,0.4512,0.2706,0.3939,0.4012,0.2791,0.3636,0.3892
+new,hwb_s0,0.6096,0.42,0.625,0.5915,0.6,0.6667,0.5814,0.6047,0.7,0.5616
+new,hwb_s1,0.5758,0.51,0.5312,0.628,0.5059,0.6566,0.564,0.3953,0.6,0.601
+new,hwb_s2,0.5787,0.48,0.6354,0.5122,0.6118,0.6162,0.5407,0.4186,0.7182,0.5369

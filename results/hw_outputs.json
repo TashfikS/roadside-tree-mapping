@@ -1,0 +1,24 @@
+{
+ "recall_used": 0.588,
+ "heat": {
+  "n_stretches": 128,
+  "spearman_lst_trees": -0.2107337148992958,
+  "p_lst_trees": 0.016955593150116497,
+  "spearman_lst_canopy": -0.30313859517889924,
+  "p_lst_canopy": 0.0005048097239420625,
+  "spearman_trees_canopy_1km": 0.48198511108732134,
+  "p_trees_canopy_1km": 8.394715243699679e-09,
+  "hottest10_median_trees_per_km_corrected": 2.89004490685163,
+  "coolest10_median_trees_per_km_corrected": 38.31006086645185
+ },
+ "canopy_100m": {
+  "n_stretches": 1281,
+  "spearman_trees_canopy": 0.3518668213530617,
+  "p": 1.2336728941498732e-38,
+  "empty_share": 0.3629976580796253,
+  "empty_with_canopy_lt10": 0.5978494623655914,
+  "withtrees_with_canopy_lt10": 0.3762254901960784,
+  "canopy_median_empty": 5.43,
+  "canopy_median_withtrees": 17.195
+ }
+}

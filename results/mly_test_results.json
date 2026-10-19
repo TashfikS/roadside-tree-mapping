@@ -1,0 +1,74 @@
+{
+ "setting": {
+  "orient": "sfm",
+  "h": 1.6,
+  "cut": 20,
+  "radius": 5,
+  "mv": 1
+ },
+ "zone_gt": 2655,
+ "images": 5994,
+ "results": {
+  "Mapillary (chosen setting)": {
+   "AP_4m": 0.021,
+   "max_recall": 0.133,
+   "n_trees": 1224,
+   "median_m10": 5.24,
+   "p90_m10": 8.53
+  },
+  "Mapillary, level camera (comparison)": {
+   "AP_4m": 0.017,
+   "max_recall": 0.147,
+   "n_trees": 2154,
+   "median_m10": 6.02,
+   "p90_m10": 8.98
+  },
+  "Mapillary, camera height 1.3 m": {
+   "AP_4m": 0.022,
+   "max_recall": 0.141,
+   "n_trees": 1383,
+   "median_m10": 5.28,
+   "p90_m10": 8.69
+  },
+  "Mapillary, camera height 1.9 m": {
+   "AP_4m": 0.018,
+   "max_recall": 0.115,
+   "n_trees": 1036,
+   "median_m10": 5.35,
+   "p90_m10": 8.69
+  },
+  "Chance (random bearing)": {
+   "AP_4m": 0.008,
+   "max_recall": 0.081,
+   "n_trees": 1299,
+   "median_m10": 6.12,
+   "p90_m10": 9.14
+  },
+  "Google panoramas (E2, same zone)": {
+   "AP_4m": 0.464,
+   "max_recall": 0.742,
+   "n_trees": 2674,
+   "median_m10": 2.31,
+   "p90_m10": 6.71
+  }
+ },
+ "cells": 300,
+ "counts": {
+  "mapillary": {
+   "pearson_r": 0.339,
+   "median_abs_diff": 4.0,
+   "ratio_total": 0.468
+  },
+  "google": {
+   "pearson_r": 0.599,
+   "median_abs_diff": 3.0,
+   "ratio_total": 1.005
+  }
+ },
+ "gate": {
+  "median_m10": 5.24,
+  "AP_mly": 0.021,
+  "AP_google": 0.464,
+  "individual_positions": false
+ }
+}
