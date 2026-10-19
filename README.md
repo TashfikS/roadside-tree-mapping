@@ -114,4 +114,3 @@ See [`CITATION.cff`](CITATION.cff). Please also cite the Pasadena Urban Trees be
 
 Code: MIT ([`LICENSE`](LICENSE)). Labels and results made for this study: CC BY 4.0 (see [`data/README.md`](data/README.md)).
 Street-view imagery is not redistributed here; Mapillary photos are CC BY-SA 4.0 by their contributors.
-# roadside-tree-mapping
