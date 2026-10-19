@@ -117,8 +117,8 @@ def tile_pano(ax):
     u = ((np.radians(beta - yaw) + math.pi) % (2 * math.pi)) / (2 * math.pi) * W; v = H / 2 + np.arctan(3.0 / D) * H / math.pi
     box = fit(ax, im, 0.5 * W, 0.40 * H, frac=0.80); x0, y0 = show(ax, im, box)
     m = m & (u >= box[0] + 8) & (u <= box[2] - 8) & (v >= box[1] + 8) & (v <= box[3] - 8)
-    ax.scatter(u[m] - x0, v[m] - y0, s=30, facecolor='none', edgecolor='white', lw=1.8, zorder=3)
-    ax.scatter(u[m] - x0, v[m] - y0, s=30, facecolor='none', edgecolor='black', lw=0.6, zorder=4)
+    ax.scatter(u[m] - x0, v[m] - y0, s=55, facecolor='none', edgecolor='white', lw=2.2, zorder=3)
+    ax.scatter(u[m] - x0, v[m] - y0, s=55, facecolor='none', edgecolor='black', lw=0.8, zorder=4)
     ax.set_xlim(-0.5, box[2] - box[0] - 0.5); ax.set_ylim(box[3] - box[1] - 0.5, -0.5)
 
 
@@ -254,9 +254,9 @@ band = answer_band(fig, [L - 0.01, 0.01, R_ - L + 0.01, 0.175]); fig.text(L - 0.
 fig.savefig('fig_overview.png', dpi=300); fig.savefig('fig_overview.pdf'); plt.close(fig)
 
 # ---------------------------------------------------------------- graphical abstract (5 x 13 cm, one row)
-ga = plt.figure(figsize=(13 / 2.54 * 1.6, 5 / 2.54 * 1.6))
+ga = plt.figure(figsize=(13 / 2.54 * 1.6, 5 / 2.54 * 1.25))
 ws = 0.18; xs = [0.012 + k * (ws + 0.018) for k in range(5)]
-axs = [ga.add_axes([x, 0.16, ws, 0.56]) for x in xs]
+axs = [ga.add_axes([x, 0.05, ws, 0.72]) for x in xs]
 tile_hw(axs[0]); step_detect(axs[1]); step_locate(axs[2]); step_gaps(axs[3])
 ax = axs[4]; ax.axis('off')
 ax.text(0.5, 0.86, 'Checked against', ha='center', fontsize=7, fontweight='bold')
@@ -267,7 +267,7 @@ for a, t in zip(axs[:4], ['Street photos', 'Trunk base', 'Range from camera heig
     a.set_title(t, fontsize=7.5, loc='left', pad=4)
 for k in range(4):
     b0, b1 = axs[k].get_position(), axs[k + 1].get_position(); arrow(ga, b0.x1 + 0.002, b1.x0 - 0.002, b0.y0 + b0.height / 2)
-ga.text(0.012, 0.93, 'Where are roadside trees missing? Street photos → validated tree map → empty kerb length → where to plant first',
+ga.text(0.012, 0.94, 'Where are roadside trees missing? Street photos → validated tree map → empty kerb length → where to plant first',
         fontsize=7.5, fontweight='bold', color=C_OURS)
 ga.savefig('graphical_abstract.png', dpi=300); plt.close(ga)
 print('ok', len(Tir), len(Tpr), {k: (len(v['pred']), len(v['inv'])) for k, v in gaps.items()})

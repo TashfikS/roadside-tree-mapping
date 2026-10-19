@@ -24,3 +24,4 @@ numbers are read from these files.
 | `hw_test_results.json`, `hw_test_results_runs.csv`, `hw_test_preds_hwb_s0.csv` | highway transfer test (356 marked trees) |
 | `hw_km.csv`, `hw_summary.json`, `hw_outputs.json`, `hw_heat_ranking.csv` | highway tree density per km and heat ranking |
 | `chm_corridor_100m.csv`, `lst_corridor_1km.csv`, `lst_canopy_1km.csv` | satellite canopy cover and surface temperature along the route |
+| `test_preds_pose_s0.csv` | Predictions of the main keypoint model (run s0) on the Bangladesh test split: image, normalised box, score, trunk-base point; used by `figures/make_fig_examples.py` |
