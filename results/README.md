@@ -25,3 +25,9 @@ numbers are read from these files.
 | `hw_km.csv`, `hw_summary.json`, `hw_outputs.json`, `hw_heat_ranking.csv` | highway tree density per km and heat ranking |
 | `chm_corridor_100m.csv`, `lst_corridor_1km.csv`, `lst_canopy_1km.csv` | satellite canopy cover and surface temperature along the route |
 | `test_preds_pose_s0.csv` | Predictions of the main keypoint model (run s0) on the Bangladesh test split: image, normalised box, score, trunk-base point; used by `figures/make_fig_examples.py` |
+| `pas_trunk_ablation.json`, `pas_trunk_ablation_val_sweep.csv`, `pas_trunk_{K,B}_test_trees.csv` | Pre-specified keypoint ablation on Pasadena (`src/pas_trunk_ablation.py`, `protocols/trunk_ablation_prereg.md`): keypoint vs box bottom of the same detections |
+| `test_preds_pose_s1.csv` | Predictions of keypoint model run s1 on the Bangladesh test split (`src/predict_bd_test.py`) |
+| `blind_trunk_analysis.json` | Keypoint vs box bottom against 200 trunk bases clicked without proposals (`src/blind_trunk_analysis.py`) |
+| `field_keypoint_ablation.csv`, `field_bias_analysis.json` | Keypoint vs box bottom on the field photos; ground-offset / tilt reading of the field distance bias |
+| `keypoint_offset_comparison.json` | Median distance between keypoint and box bottom in Pasadena and Bangladesh detections |
+

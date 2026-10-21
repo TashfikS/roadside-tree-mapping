@@ -18,6 +18,7 @@ Jobs (paper Table 3 and Sections 4.1, 4.4, 5.4)
     gdino_zs            Grounding DINO, zero-shot
     pas_teacher         Pasadena teacher + inventory-verified pseudo-labels
     pas_student         Pasadena detector retrained on the pseudo-labels (attach the pas_teacher output)
+    pas_trunk_pose      Pasadena trunk-base keypoint detector on the same training set (Test P, trunk_ablation_prereg.md)
     vlm_gap             vision-language second look (needs work/vlm2_crops.b64 from src/vlm2_targets.py)
     e7_pas_a, e7_pas_b  Depth Anything V2 on the Pasadena boxes (needs work/kout/pas_student/student_raw_dets.csv)
     e7_bd_{0..5}        Depth Anything V2 on the Bangladesh field photos (needs FIELD_PHOTO_DIR)
@@ -64,6 +65,7 @@ JOBS = {
     'gdino_zs': lambda: (T('grounding_dino_zeroshot.py').replace('__SPLIT__', split_csv()), [BD]),
     'pas_teacher': lambda: (T('pasadena_teacher.py').replace('__HUMAN__', human()), [PAS]),
     'pas_student': lambda: (T('pasadena_student.py').replace('__HUMAN__', human()), [PAS]),
+    'pas_trunk_pose': lambda: (T('pasadena_trunk_pose.py').replace('__HUMAN__', human()), [PAS]),
     'vlm_gap': lambda: (T('vlm_second_look.py').replace('__RENDER__', open(os.path.join(ROOT, 'src', 'vlm_render.py')).read())
                         .replace('__CROPS__', open(os.path.join(ROOT, 'work', 'vlm2_crops.b64')).read().strip()), [PAS]),
 }
@@ -129,6 +131,9 @@ for p in range(6):
     JOBS[f'e7_bd_{p}'] = (lambda p=p: depth_bangladesh(p))
 
 
+# kernels whose output a job reads (the teacher's pseudo_labels.json)
+KSRC = {'pas_student': '{user}/pas-teacher', 'pas_trunk_pose': '{user}/pas-teacher'}
+
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--user', required=True, help='Kaggle username that will own the kernels')
@@ -145,5 +150,5 @@ if __name__ == '__main__':
         slug = 'rt-' + name.replace('_', '-')
         json.dump(dict(id=f'{a.user}/{slug}', title=slug, code_file='train.py', language='python', kernel_type='script',
                        is_private=True, enable_gpu=not name.startswith('e7_bd'), enable_internet=True, dataset_sources=data, competition_sources=[],
-                       kernel_sources=[]), open(os.path.join(d, 'kernel-metadata.json'), 'w'), indent=1)
+                       kernel_sources=[KSRC[name].replace('{user}', a.user)] if name in KSRC else []), open(os.path.join(d, 'kernel-metadata.json'), 'w'), indent=1)
         print(f'{name:14s} -> {d}  ({len(src) // 1024} KB)')

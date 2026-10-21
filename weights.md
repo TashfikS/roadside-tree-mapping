@@ -12,3 +12,5 @@ Attached to the GitHub release `v1.0`. Download into `weights/`.
 | `highway_trunkpose_hwb_s2.pt` | YOLO11m-pose, 1024 px | as above, seed 2 | highway test | `8e518e56b526e4cfd7832b4b9e2248f0fa89c57a08460b903614448500ff016b` |
 
 Check a download with `sha256sum weights/*.pt`.
+
+| `pasadena_trunkpose_ablation.pt` | YOLO11m-pose trained for the Pasadena keypoint ablation (Test P, not used for the main results) | sha256 3c62f984e4700ed3… |

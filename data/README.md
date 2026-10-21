@@ -18,3 +18,4 @@ Mapillary photos can be downloaded by id through the Mapillary API (CC BY-SA 4.0
 | `highway_test_status_pass1.csv` | first-pass status of every test photo (`done`, `none`, `unusable`), the frozen labels of the usability test | §3.4 |
 | `highway_usability_labels.csv` | usable/unusable labels of the 300 training and validation photos | §3.4 |
 | `basemap_bangladesh_naturalearth.geojson` | Natural Earth 1:10m countries, Bangladesh divisions, rivers and populated places in the map extent (public domain); used by `figures/make_fig_maps.py` | maps |
+| `blind_trunk_tasfik.csv` | Trunk bases clicked by the first author on 200 random test boxes with no proposal shown (`annotator,key,status,u,v`; pixels of the original image) | Test R |

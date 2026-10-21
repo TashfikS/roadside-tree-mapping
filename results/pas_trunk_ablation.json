@@ -1,0 +1,76 @@
+{
+ "keypoint_conf_threshold": 0.5,
+ "share_keypoint_used": 0.9601113710628589,
+ "val_best": [
+  {
+   "variant": "B",
+   "cut": 15,
+   "radius": 3,
+   "min_views": 1,
+   "AP_4m": 0.6645,
+   "max_recall": 0.8586,
+   "n_trees": 2455,
+   "gate_median_matched10": 2.53,
+   "p90_matched10": 6.87,
+   "frac_within2_of_matched4": 0.543
+  },
+  {
+   "variant": "K",
+   "cut": 15,
+   "radius": 5,
+   "min_views": 1,
+   "AP_4m": 0.6279,
+   "max_recall": 0.7834,
+   "n_trees": 1902,
+   "gate_median_matched10": 2.39,
+   "p90_matched10": 6.62,
+   "frac_within2_of_matched4": 0.534
+  }
+ ],
+ "test": {
+  "K": {
+   "AP_4m": 0.6557,
+   "max_recall": 0.8306,
+   "n_trees": 11349,
+   "gate_median_matched10": 2.3,
+   "p90_matched10": 6.96,
+   "frac_within2_of_matched4": 0.581,
+   "AP4_strict": 0.5625,
+   "median_nearest_real_tree_within10": 2.27,
+   "share_within2_of_within4": 0.586
+  },
+  "B": {
+   "AP_4m": 0.6661,
+   "max_recall": 0.8797,
+   "n_trees": 14561,
+   "gate_median_matched10": 2.44,
+   "p90_matched10": 6.96,
+   "frac_within2_of_matched4": 0.584,
+   "AP4_strict": 0.5839,
+   "median_nearest_real_tree_within10": 2.403,
+   "share_within2_of_within4": 0.587
+  }
+ },
+ "paired_bootstrap_K_minus_B": {
+  "official": {
+   "point": -0.0104,
+   "ci95": [
+    -0.0266,
+    -0.0015
+   ],
+   "share_positive": 0.01,
+   "n_rep": 100
+  },
+  "strict": {
+   "point": -0.0214,
+   "ci95": [
+    -0.031,
+    -0.0145
+   ],
+   "share_positive": 0.0,
+   "n_rep": 100
+  },
+  "n_blocks": 82
+ },
+ "K_better_by_rule": false
+}

@@ -1,0 +1,31 @@
+{
+ "n": 22,
+ "median_ratio_click_to_aruler": 0.807,
+ "implied_ground_drop_m": {
+  "median": 0.36,
+  "iqr": [
+   0.16,
+   0.47
+  ]
+ },
+ "implied_pitch_error_deg": {
+  "median": 1.45,
+  "iqr": [
+   0.58,
+   2.06
+  ]
+ },
+ "ratio_vs_distance_spearman": {
+  "rho": -0.181,
+  "p": 0.4193
+ },
+ "distance_ratio_for_drop": {
+  "0.25m_h1.5": 0.857,
+  "0.5m_h1.5": 0.75,
+  "1.0m_h1.5": 0.6,
+  "0.25m_h3.0": 0.923,
+  "0.5m_h3.0": 0.857,
+  "1.0m_h3.0": 0.75
+ },
+ "note": "A constant ground drop gives a ratio independent of distance (level camera); a camera-tilt error gives a ratio that falls with distance."
+}

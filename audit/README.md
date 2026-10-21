@@ -14,3 +14,6 @@ number with the original weights and show where it came from.
 
 Result (`../results/audit/audit_values.json`): the original weights give 91.3 % on a random sample of 700 images of the earlier validation list (91.8 %
 of the list's images show a scene that is also in training), and 53.1 % on the earlier held-out test set.
+
+## Hostile-review rounds
+`review_round1.md` to `review_round5.md`: five rounds of review of the compiled manuscript by an independent language model acting as a hostile reviewer, after each round of fixes.

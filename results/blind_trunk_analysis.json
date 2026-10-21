@@ -1,0 +1,54 @@
+{
+ "n_annotators": 1,
+ "tasfik": {
+  "n_clicked": 200,
+  "n_cannot_locate": 0,
+  "n_matched": 94,
+  "all": {
+   "n": 94,
+   "keypoint_median_px": 23.0,
+   "boxbottom_median_px": 75.6,
+   "auto_proposal_median_px": 10.9,
+   "keypoint_rel_pct": 4.8,
+   "boxbottom_rel_pct": 14.2,
+   "keypoint_closer_share": 0.947,
+   "wilcoxon_p": 6.517850726187648e-16
+  },
+  "visible": {
+   "n": 78,
+   "keypoint_median_px": 20.2,
+   "boxbottom_median_px": 67.3,
+   "auto_proposal_median_px": 9.7,
+   "keypoint_rel_pct": 4.3,
+   "boxbottom_rel_pct": 12.7,
+   "keypoint_closer_share": 0.936,
+   "wilcoxon_p": 3.610662215240194e-13
+  },
+  "hidden": {
+   "n": 16,
+   "keypoint_median_px": 50.2,
+   "boxbottom_median_px": 144.6,
+   "auto_proposal_median_px": 38.2,
+   "keypoint_rel_pct": 7.5,
+   "boxbottom_rel_pct": 22.2,
+   "keypoint_closer_share": 1.0,
+   "wilcoxon_p": 3.0517578125e-05
+  }
+ },
+ "same_annotator_first_review_vs_blind": {
+  "n": 190,
+  "median_px": 9.0,
+  "p90_px": 24.3,
+  "median_rel_pct": 1.8,
+  "visible": {
+   "n": 165,
+   "median_px": 7.9
+  },
+  "hidden": {
+   "n": 25,
+   "median_px": 19.8
+  },
+  "status_agreement_with_first_review": 0.811
+ },
+ "note": "One annotator (the first author). Second-annotator agreement not available; the noise floor is the same annotator's distance between the first, proposal-assisted review and the blind click."
+}

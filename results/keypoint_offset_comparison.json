@@ -1,0 +1,9 @@
+{
+ "pasadena_kp_to_boxbottom_rel_pct": 3.8,
+ "bangladesh_kp_to_boxbottom_rel_pct": 10.1,
+ "pasadena_kp_to_boxbottom_px": 9.5,
+ "bangladesh_kp_to_boxbottom_px": 56.6,
+ "pasadena_box_h_median_px": 263,
+ "bangladesh_box_h_median_px": 621,
+ "note": "detections with score >= 0.25; Pasadena: pas_pose_raw_dets.csv (val+test areas); Bangladesh: test_preds_pose_s1.csv"
+}
