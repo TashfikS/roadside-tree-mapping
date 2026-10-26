@@ -1,0 +1,18 @@
+\begin{table}[t]\centering\footnotesize
+\caption{Pasadena test area: map score of every configuration, each with its settings chosen on the validation area. Intervals: 400\,m spatial block bootstrap with the same 500 resamples for all maps (paired). Strict: every inventory tree counts and non-tree records are removed.}\label{tab:pasadena}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{p{4.0cm}p{1.7cm}p{2.4cm}cccc}\toprule
+Detector & Ground point & Range & Val.\ AP@4\,m & Test AP@4\,m & 95\% interval & Strict\\\midrule
+First detector (human labels, 458 panoramas) & box bottom & camera height & 0.500 & 0.491 & 0.438--0.531 & 0.449\\
+Retrained detector (inventory-verified labels)$^{a}$ & box bottom & camera height & 0.637 & 0.640 & 0.573--0.688 & 0.565\\
+Keypoint model, same training set & box bottom (B) & camera height & 0.664 & 0.666 & 0.607--0.707 & 0.584\\
+Keypoint model, same training set & keypoint (K) & camera height & 0.628 & 0.656 & 0.591--0.701 & 0.562\\
+Retrained detector & box & depth network, as is & 0.011 & 0.012 & 0.010--0.016 & 0.012\\
+Retrained detector & box & depth network $\times$0.44$^{b}$ & 0.632 & 0.622 & -- & --\\
+\midrule
+\citet{branson2018google}, street view only & \multicolumn{2}{l}{multi-view fusion} & -- & 0.581 & -- & --\\
+\citet{branson2018google}, street view, aerial and map & \multicolumn{2}{l}{multi-view fusion} & -- & 0.706 & -- & --\\
+\bottomrule
+\multicolumn{7}{p{14.0cm}}{\scriptsize $^{a}$Used for all other results in the paper; chosen on validation before the keypoint model existed. $^{b}$Scale fitted on surveyed trees of the validation area; analysis added after the primary depth-network result, no tree file saved for the interval. Branson et al.: reported values, same benchmark evaluator.}\\
+\end{tabular}
+\end{table}

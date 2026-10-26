@@ -1,0 +1,119 @@
+{
+ "partial_lst_trees_given_dcity": [
+  -0.279064,
+  0.075
+ ],
+ "partial_lst_canopy_given_dcity": [
+  -0.255585,
+  0.0833
+ ],
+ "lst_vs_dcity": -0.625,
+ "top10_overlap_with_10_hottest": 6,
+ "top15": [
+  {
+   "km": 237,
+   "priority": 6.1,
+   "lst": 39.8,
+   "trees_per_km": 0.0,
+   "share_in_top15": 1.0
+  },
+  {
+   "km": 236,
+   "priority": 5.58,
+   "lst": 38.9,
+   "trees_per_km": 0.0,
+   "share_in_top15": 1.0
+  },
+  {
+   "km": 13,
+   "priority": 5.42,
+   "lst": 38.7,
+   "trees_per_km": 0.0,
+   "share_in_top15": 1.0
+  },
+  {
+   "km": 15,
+   "priority": 5.28,
+   "lst": 40.9,
+   "trees_per_km": 2.2,
+   "share_in_top15": 1.0
+  },
+  {
+   "km": 4,
+   "priority": 5.2,
+   "lst": 39.2,
+   "trees_per_km": 0.6,
+   "share_in_top15": 1.0
+  },
+  {
+   "km": 12,
+   "priority": 5.16,
+   "lst": 39.0,
+   "trees_per_km": 0.5,
+   "share_in_top15": 1.0
+  },
+  {
+   "km": 9,
+   "priority": 4.96,
+   "lst": 37.8,
+   "trees_per_km": 0.0,
+   "share_in_top15": 0.772
+  },
+  {
+   "km": 28,
+   "priority": 4.94,
+   "lst": 38.7,
+   "trees_per_km": 0.5,
+   "share_in_top15": 1.0
+  },
+  {
+   "km": 7,
+   "priority": 4.93,
+   "lst": 38.7,
+   "trees_per_km": 0.5,
+   "share_in_top15": 0.736
+  },
+  {
+   "km": 14,
+   "priority": 4.81,
+   "lst": 39.2,
+   "trees_per_km": 1.2,
+   "share_in_top15": 1.0
+  },
+  {
+   "km": 8,
+   "priority": 4.38,
+   "lst": 36.8,
+   "trees_per_km": 0.0,
+   "share_in_top15": 0.55
+  },
+  {
+   "km": 87,
+   "priority": 4.33,
+   "lst": 36.7,
+   "trees_per_km": 0.0,
+   "share_in_top15": 1.0
+  },
+  {
+   "km": 42,
+   "priority": 3.92,
+   "lst": 37.7,
+   "trees_per_km": 1.2,
+   "share_in_top15": 0.978
+  },
+  {
+   "km": 11,
+   "priority": 3.81,
+   "lst": 38.1,
+   "trees_per_km": 2.0,
+   "share_in_top15": 0.887
+  },
+  {
+   "km": 6,
+   "priority": 3.65,
+   "lst": 38.9,
+   "trees_per_km": 4.0,
+   "share_in_top15": 0.463
+  }
+ ]
+}

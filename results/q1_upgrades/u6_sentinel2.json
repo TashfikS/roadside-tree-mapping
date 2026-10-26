@@ -1,0 +1,19 @@
+{
+ "n": 128,
+ "share": {
+  "rho": 0.414478,
+  "p": 0.0083
+ },
+ "median": {
+  "rho": 0.427947,
+  "p": 0.0042
+ },
+ "canopy_vs_share_rho": 0.6,
+ "canopy_vs_share_shift": [
+  0.600149,
+  0.0042
+ ],
+ "n_scenes": 255,
+ "n_scenes_with_pixels": 172,
+ "scenes_failed": 0
+}

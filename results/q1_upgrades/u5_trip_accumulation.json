@@ -1,0 +1,66 @@
+{
+ "n_stretches": 7,
+ "trips_per_stretch_median": 7.0,
+ "k1": {
+  "median_rho": 0.11,
+  "range95": [
+   -0.556,
+   0.837
+  ]
+ },
+ "k2": {
+  "median_rho": 0.143,
+  "range95": [
+   -0.537,
+   0.75
+  ]
+ },
+ "k3": {
+  "median_rho": 0.18,
+  "range95": [
+   -0.538,
+   0.758
+  ]
+ },
+ "k4": {
+  "median_rho": 0.214,
+  "range95": [
+   -0.358,
+   0.858
+  ]
+ },
+ "kall": {
+  "median_rho": 0.036,
+  "range95": [
+   0.036,
+   0.036
+  ]
+ },
+ "exploratory_min2": {
+  "n_stretches": 49,
+  "k1": {
+   "median_rho": 0.555,
+   "range95": [
+    0.4,
+    0.695
+   ]
+  },
+  "k2": {
+   "median_rho": 0.589,
+   "range95": [
+    0.462,
+    0.688
+   ]
+  },
+  "all_trips_rho": 0.69,
+  "n_trips_distribution": {
+   "1": 79,
+   "2": 37,
+   "3": 5,
+   "6": 1,
+   "7": 4,
+   "8": 1,
+   "10": 1
+  }
+ }
+}

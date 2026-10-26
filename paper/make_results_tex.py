@@ -34,8 +34,29 @@ A = j('audit/audit_values.json')
 OW, LK, YV, TK = A['old_weights'], A['old_split_leakage'], A['yolov4_retrain'], A['trunk_key']
 TA = pd.DataFrame(A['trunk_anchoring']); CO = TA[TA.subset.str.startswith('corrected')]
 REC, FIN, FIRST = A['e2_point']['records'], A['e2_point']['retrained (final)'], A['e2_point']['first detector, validation-chosen merge']
-BO = A['e2_bootstrap']['bootstrap_400m_blocks']; BF, B1 = BO['pas_student_test_trees.csv'], BO['pas_e2_test_trees_dedup.csv']
-ABOVE = A['e2_bootstrap']['share_of_bootstrap_reps_final_official_above_branson_0.581']; E3A, SC = A['e3'], A['second_check']
+U12 = json.load(open('u1_u2_keypoint.json')); U3 = json.load(open('u3_density_estimators.json')); U4 = json.load(open('u4_vlm_high_purity.json'))
+U5 = json.load(open('u5_trip_accumulation.json')); U6 = json.load(open('u6_sentinel2.json')); U7 = json.load(open('u7_heat_priority.json'))
+_r = U12['s1_reviewed']
+UX = dict(rprms=U12['repeatability']['rmse_px'], rpp95=U12['repeatability']['p95_px'], b0n=U12['s0_blind']['n'], b0k=U12['s0_blind']['keypoint_median_px'],
+          b0b=U12['s0_blind']['boxbottom_median_px'], b0c=100 * U12['s0_blind']['keypoint_closer'],
+          rb15=_r['range_err_h1.5_D15']['boxbottom_median_m'], rb30=_r['range_err_h3.0_D15']['boxbottom_median_m'],
+          rk15=_r['range_err_h1.5_D15']['keypoint_median_m'], rk30=_r['range_err_h3.0_D15']['keypoint_median_m'],
+          xg15=100 * _r['range_err_h1.5_D15']['share_gt4m_boxbottom'], xg30=100 * _r['range_err_h3.0_D15']['share_gt4m_boxbottom'],
+          gk15=100 * _r['range_err_h1.5_D15']['share_gt4m_keypoint'], gk30=100 * _r['range_err_h3.0_D15']['share_gt4m_keypoint'],
+          u4p=100 * U4['test']['precision'], u4g=U4['test']['gain_pp'], u4lo=U4['test']['ci_pp'][0], u4hi=U4['test']['ci_pp'][1], u4k=100 * U4['test']['kept'],
+          u3w=U3['factors']['window'], u3h0=U3['as_detected']['hottest10_median'], u3h1=U3['protocol_div_recall']['hottest10_median'], u3h2=U3['window_adjusted']['hottest10_median'],
+          u3c0=U3['as_detected']['coolest10_median'], u3c1=U3['protocol_div_recall']['coolest10_median'], u3c2=U3['window_adjusted']['coolest10_median'],
+          u5n4=U5['n_stretches'], u5k1=U5['k1']['median_rho'], u5k4=U5['k4']['median_rho'], u5n2=U5['exploratory_min2']['n_stretches'],
+          u5a=U5['exploratory_min2']['k1']['median_rho'], u5b=U5['exploratory_min2']['k2']['median_rho'], u5all=U5['exploratory_min2']['all_trips_rho'],
+          u6r=U6['share']['rho'], u6p=U6['share']['p'], u6n=U6['n'], u6rm=U6['median']['rho'], u6pm=U6['median']['p'], u6rc=U6['canopy_vs_share_rho'],
+          u7d=U7['lst_vs_dcity'], u7t=U7['partial_lst_trees_given_dcity'][0], u7tp=U7['partial_lst_trees_given_dcity'][1],
+          u7c=U7['partial_lst_canopy_given_dcity'][0], u7cp=U7['partial_lst_canopy_given_dcity'][1], u7o=U7['top10_overlap_with_10_hottest'],
+          u7s=sum(r['share_in_top15'] >= 0.75 for r in U7['top15']))
+PT = json.load(open('pas_table.json'))   # one paired 400 m block bootstrap for every Pasadena map (src/pas_table_bootstrap.py)
+_pb = lambda k: {r: {'ci95': PT['ci95'][k][r]} for r in ('official', 'strict')} | {'n_blocks': PT['n_blocks']}
+BF, B1 = _pb('retrained_box'), _pb('first_detector')
+KD = PT['paired_differences']['pose_keypoint_K_minus_pose_box_bottom_B']
+ABOVE = PT['share_above_branson_0581']['retrained_box']; PT_point = lambda k: PT['point'][k]['AP4']; E3A, SC = A['e3'], A['second_check']
 cs = CS[CS.S == 12].set_index('site_type')
 vac, nor = cs.loc['city vacant planting sites'], cs.loc['city "no room for replant" sites']
 e3a = E3.iloc[0]; e3l = E3.iloc[3]; bda, bdl = B.iloc[2], B.iloc[3]
@@ -45,7 +66,7 @@ assert int(e3a.n) == E3A['n'] and abs(e3a.median_abs_m - E3A['ours_fixed_h1.5'][
 assert abs(g.diff_m.abs().median() - SC['gps_vs_aruler']['median_abs_m']) < 0.06
 X1 = dict(v700=OW['old_validation_random700']['AP50'], twin=LK['valid_twin_in_train_pct'], t270=OW['released_test_set_270']['AP50'],
           v4it=f"{YV['last_iteration']:,}", v4max=f"{YV['cfg_max_batches']:,}", v4min=YV['train_minutes'],
-          kK=KA['test']['K']['AP_4m'], kB=KA['test']['B']['AP_4m'], vK=KV['K'], vB=KV['B'], kd=KA['paired_bootstrap_K_minus_B']['official']['point'], klo=KA['paired_bootstrap_K_minus_B']['official']['ci95'][0], khi=KA['paired_bootstrap_K_minus_B']['official']['ci95'][1], kn=KA['paired_bootstrap_K_minus_B']['official']['n_rep'], sK=KA['test']['K']['AP4_strict'], sB=KA['test']['B']['AP4_strict'], mK=KA['test']['K']['gate_median_matched10'], mB=KA['test']['B']['gate_median_matched10'], nK=f"{KA['test']['K']['n_trees']:,}", nB=f"{KA['test']['B']['n_trees']:,}", rK=KA['test']['K']['max_recall'], rB=KA['test']['B']['max_recall'], tkacc=TK['accepted_pct'], bln=200, blm=BL['tasfik']['all']['n'], blk=BL['tasfik']['all']['keypoint_median_px'], blkr=BL['tasfik']['all']['keypoint_rel_pct'], blb=BL['tasfik']['all']['boxbottom_median_px'], blbr=BL['tasfik']['all']['boxbottom_rel_pct'], blc=100*BL['tasfik']['all']['keypoint_closer_share'], blvk=BL['tasfik']['visible']['keypoint_median_px'], blvb=BL['tasfik']['visible']['boxbottom_median_px'], blvn=BL['tasfik']['visible']['n'], blhk=BL['tasfik']['hidden']['keypoint_median_px'], blhb=BL['tasfik']['hidden']['boxbottom_median_px'], blhn=BL['tasfik']['hidden']['n'], blrep=BL['same_annotator_first_review_vs_blind']['median_px'], conlo=int(CO.n.min()), conhi=int(CO.n.max()), cpl=CO.pose_median_px.min(), cph=CO.pose_median_px.max(),
+          kK=KA['test']['K']['AP_4m'], kB=KA['test']['B']['AP_4m'], vK=KV['K'], vB=KV['B'], kd=KA['paired_bootstrap_K_minus_B']['official']['point'], klo=KD['official']['ci95'][0], khi=KD['official']['ci95'][1], kn=PT['n_rep'], kslo=KD['strict']['ci95'][0], bbd=KA['test']['B']['AP_4m']-PT_point('retrained_box'), bblo=PT['paired_differences']['pose_box_bottom_B_minus_retrained_box']['official']['ci95'][0], bbhi=PT['paired_differences']['pose_box_bottom_B_minus_retrained_box']['official']['ci95'][1], kshi=KD['strict']['ci95'][1], ksd=KA['test']['K']['AP4_strict']-KA['test']['B']['AP4_strict'], sK=KA['test']['K']['AP4_strict'], sB=KA['test']['B']['AP4_strict'], mK=KA['test']['K']['gate_median_matched10'], mB=KA['test']['B']['gate_median_matched10'], nK=f"{KA['test']['K']['n_trees']:,}", nB=f"{KA['test']['B']['n_trees']:,}", rK=KA['test']['K']['max_recall'], rB=KA['test']['B']['max_recall'], tkacc=TK['accepted_pct'], bln=200, blm=BL['tasfik']['all']['n'], blk=BL['tasfik']['all']['keypoint_median_px'], blkr=BL['tasfik']['all']['keypoint_rel_pct'], blb=BL['tasfik']['all']['boxbottom_median_px'], blbr=BL['tasfik']['all']['boxbottom_rel_pct'], blc=100*BL['tasfik']['all']['keypoint_closer_share'], blvk=BL['tasfik']['visible']['keypoint_median_px'], blvb=BL['tasfik']['visible']['boxbottom_median_px'], blvn=BL['tasfik']['visible']['n'], blhk=BL['tasfik']['hidden']['keypoint_median_px'], blhb=BL['tasfik']['hidden']['boxbottom_median_px'], blhn=BL['tasfik']['hidden']['n'], blrep=BL['same_annotator_first_review_vs_blind']['median_px'], conlo=int(CO.n.min()), conhi=int(CO.n.max()), cpl=CO.pose_median_px.min(), cph=CO.pose_median_px.max(),
           cbl=CO.box_bottom_median_px.min(), cbh=CO.box_bottom_median_px.max(), cbt=(f'{CO.pose_better_than_box_pct.min():.0f}' if round(CO.pose_better_than_box_pct.min()) == round(CO.pose_better_than_box_pct.max())
                else f'{CO.pose_better_than_box_pct.min():.0f}--{CO.pose_better_than_box_pct.max():.0f}'),
           nrec=f"{REC['test_records']:,}", ntree=f"{REC['real_trees']:,}", nnon=f"{REC['non_tree_records']:,}", ndiff=f"{REC['difficult_records']:,}",
@@ -94,7 +115,14 @@ with no proposal shown. Against these points, the predicted point of run~1, comp
 (%(blkr).1f\%% of the box height) and the box bottom %(blb).1f\,px (%(blbr).1f\%%) on the %(blm)d trees that the run detects (the other clicked trees have no matching detection and cannot be scored); the predicted
 point is the closer of the two for %(blc).0f\%% of them (Wilcoxon $p<10^{-10}$), for visible bases (%(blvk).1f against %(blvb).1f\,px, $n=$%(blvn)d) and
 for hidden ones (%(blhk).1f against %(blhb).1f\,px, $n=$%(blhn)d). The same annotator's blind clicks lie a median of %(blrep).1f\,px from
-his earlier, proposal-assisted points (19.8\,px for hidden bases), an estimate of the annotation noise; a second annotator was not available.
+his earlier, proposal-assisted points (19.8\,px for hidden bases; root-mean-square %(rprms).1f\,px, 95th percentile %(rpp95).1f\,px), an estimate of the annotation
+noise; a second annotator was not available. The second training run with saved predictions gives the same picture on its %(b0n)d matched
+trees (%(b0k).1f against %(b0b).1f\,px; closer for %(b0c).0f\%%).
+Translated into range for a level camera (Eq.~\eqref{eq:err}, assuming a 90$^\circ$ horizontal field of view because the
+screenshots carry no focal length), only the vertical component of the error matters; its median for the box bottom on the reviewed test trees corresponds to
+%(rb15).2f\,m at 15\,m from a camera 1.5\,m high and %(rb30).2f\,m from a camera 3\,m high; for the keypoint the values are %(rk15).2f\,m
+and %(rk30).2f\,m. At 15\,m the box-bottom error exceeds the 4\,m matching tolerance for %(xg15).0f\%% of trees at 1.5\,m and %(xg30).0f\%% at 3\,m
+(keypoint: %(gk15).0f\%% and %(gk30).0f\%%).
 
 Figure~\ref{fig:trunk} shows the full distributions: the predicted point is closer than the box bottom over the whole
 range, and the advantage remains when the distances are scaled by the size of the tree in the image and for hidden bases
@@ -120,11 +148,16 @@ reaches 0.706. These positions use the bottom-centre of each box as the ground p
 
 In the pre-specified keypoint ablation (Section~\ref{sec:det}), the keypoint variant K reaches AP@4\,m %(kK).3f on the
 test area and the box-bottom variant B of the same detections %(kB).3f (validation: %(vK).3f and %(vB).3f); the paired
-difference is $%(kd).3f$ (95\%% interval $%(klo).3f$ to $%(khi).3f$, %(kn)d block resamples), and under strict scoring
-%(sK).3f against %(sB).3f. By the rule fixed in advance, the keypoint does not improve the map score on these panoramas; the interval lies below zero, so it is slightly lower.
+difference is $%(kd).3f$ (95\%% interval $%(klo).3f$ to $%(khi)+.3f$, %(kn)d paired block resamples), and under strict scoring
+%(sK).4f against %(sB).4f (difference $%(ksd).3f$, $%(kslo).3f$ to $%(kshi).3f$). By the rule fixed in advance, the keypoint does not improve the map score on these panoramas.
 For mapped trees with a record within 10\,m, the median distance to the nearest record is %(mK).2f\,m for K and %(mB).2f\,m
-for B; K keeps fewer trees (%(nK)s against %(nB)s) at a lower maximum recall (%(rK).3f against %(rB).3f). The box-bottom score of this keypoint model (0.666) lies inside the
-95\%% interval of the retrained box detector used for the main results (0.568--0.690), which was fixed before this test and is kept.
+for B; K keeps fewer trees (%(nK)s against %(nB)s) at a lower maximum recall (%(rK).3f against %(rB).3f). The box bottoms of this keypoint model score higher than the retrained box detector used for the main results
+(paired difference %(bbd)+.3f, 95\%% interval %(bblo)+.3f to %(bbhi)+.3f). The main results keep the detector that was fixed
+before this test, so they are, if anything, conservative.
+
+Table~\ref{tab:pasadena} lists all Pasadena configurations.
+
+\input{sections/tab_pasadena}
 
 The detector used for these results was retrained on inventory-verified pseudo-labels from the training area
 (Section~\ref{sec:det}). It was adopted because it scored higher on the validation area than the first detector
@@ -176,7 +209,11 @@ The pre-specified rule required a gain of at least 5 points, a 95\%% interval ab
 spots kept; the step passed with both the first
 detector (+%(vg0).1f points) and the retrained detector. A second question (whether there is room to plant) did not separate
 the city's vacant sites from its no-room sites (AUC %(qb).3f, 95\%% CI %(qblo).3f--%(qbhi).3f) and is not used.
-""" % dict(lo=S.loc[['rtdetr_l', 'pose', 'yolo11m', 'yolo832', 'posel', 'frcnn (native COCO scorer)']].AP50.min(),
+A second, stricter threshold (Section~\ref{sec:vlm}), set as the most precise one on the validation area that keeps at least half of the
+truly free spots, raises the share of truly free candidates on the test area to %(u4p).1f\%% (+%(u4g).1f points, 95\%% CI
+%(u4lo).1f to %(u4hi).1f) while keeping %(u4k).1f\%% of them. The two thresholds give planners a choice between a broad screening list
+and a shorter, purer list for site visits.
+""" % dict(**UX, lo=S.loc[['rtdetr_l', 'pose', 'yolo11m', 'yolo832', 'posel', 'frcnn (native COCO scorer)']].AP50.min(),
            hi=S.loc[['rtdetr_l', 'pose', 'yolo11m', 'yolo832', 'posel', 'frcnn (native COCO scorer)']].AP50.max(),
            sdlo=S.loc[['rtdetr_l', 'pose', 'yolo11m', 'yolo832', 'posel', 'frcnn (native COCO scorer)']].AP50_sd.min(),
            sdhi=S.loc[['rtdetr_l', 'pose', 'yolo11m', 'yolo832', 'posel', 'frcnn (native COCO scorer)']].AP50_sd.max(),
@@ -231,7 +268,12 @@ kilometre, and no individual planting gaps are reported for the highway.
 The protocol also specified dividing the counts by the measured detection rate (%(recu).3f). That rate was measured on marked
 trees at all distances (median %(clickmed).0f\,m from the camera), whereas the map counts only trees 2--20\,m from the camera,
 where the detector finds more of the marked trees (%(winrec).0f\%%, measured on only %(nwin)d trees) and %(winfp).0f\%% of its boxes
-contain no marked tree (some of them may be trees the annotator did not mark). We therefore report densities as detected. This departure from the protocol was decided after the test photos had been scored, so the as-detected densities are a post-hoc choice; the ranking of stretches is the same with either scaling, because the correction divides every stretch by the same factor.
+contain no marked tree (some of them may be trees the annotator did not mark). We therefore report the densities as detected
+alongside the protocol's estimate, and as a third estimate the as-detected density multiplied by the precision and divided by the
+recall measured inside the 2--20\,m window (factor %(u3w).2f). The ten hottest stretches then have %(u3h0).1f, %(u3h1).1f and %(u3h2).1f trees
+per kilometre (as detected, protocol, window) and the ten coolest %(u3c0).1f, %(u3c1).1f and %(u3c2).1f. Because each estimate scales every
+stretch by the same factor, all rank correlations below are identical for the three. Choosing the as-detected values for the
+figures was decided after the highway test.
 Dividing by the detection rate would multiply them by %(mapf).1f, about %(over).1f times the factor implied inside the 2--20\,m
 window (%(winf).1f), so corrected densities are an upper bound. Comparisons between stretches do not depend on this choice.
 
@@ -244,7 +286,15 @@ route, $p=$%(ptc).3f) and %(rh).2f per 100\,m
 10\%%, against %(t10).1f\%% of stretches with trees. Counts from single trips agree poorly between trips covering the same piece
 of road (Spearman %(r100).2f per 100\,m, %(p100)s trip pairs; %(r1k).2f per kilometre, %(p1k)d pairs): a single trip sees few
 trees (median %(mtk).0f per kilometre), so the map combines all trips covering a stretch; doing so lowers the share of
-50\,m road sides without any tree from %(es).1f\%% to %(ec).1f\%%.
+50\,m road sides without any tree from %(es).1f\%% to %(ec).1f\%%. Only %(u5n4)d stretches are covered by four or more trips, too
+few to trace agreement as trips accumulate (Spearman with canopy %(u5k1).2f for one trip and %(u5k4).2f for four, wide intervals). On the %(u5n2)d
+stretches with at least two trips, an exploratory comparison gives $\rho=$%(u5a).2f with canopy for one randomly drawn trip,
+%(u5b).2f for two and %(u5all).2f for all trips.
+
+The canopy map predates the photos by 3--11 years. Against vegetation from Sentinel-2 images of the 2023/24 and 2024/25 dry
+seasons (share of 10\,m pixels within 20\,m of the route with NDVI above 0.4), tree density gives Spearman $\rho=$%(u6r).2f
+($n=$%(u6n)d stretches, circular-shift $p=$%(u6p).3f); the median NDVI gives %(u6rm).2f ($p=$%(u6pm).3f), and the two satellite
+measures agree with each other at %(u6rc).2f.
 
 \input{sections/fig_highway_map}
 Hot-season surface temperature ranges from %(tmin).1f to %(tmax).1f\,$^\circ$C between 1\,km stretches (Fig.~\ref{fig:hwmap}b). The ten hottest mapped
@@ -254,8 +304,15 @@ tree density is lowest; along the rural middle of the route, temperature and tre
 $%(rex).2f$, $p=$%(pex).2f, $n=$%(nex)d stretches more than 30\,km from either city). Across all mapped stretches, the negative
 correlation between temperature and tree density (Spearman $%(rlt).2f$) does not survive a circular-shift test that keeps the
 spatial autocorrelation along the route ($p=$%(pst).2f, %(nsh)d shifts), whereas the correlation between temperature and
-canopy cover does ($%(rlc).2f$, $p=$%(psc).3f).
-""" % dict(ntr=sum(v['split'] == 'train' for v in LB.values()), nva=sum(v['split'] == 'val' for v in LB.values()),
+canopy cover does ($%(rlc).2f$, $p=$%(psc).3f). Distance to the nearer city explains much of the temperature (Spearman
+$%(u7d).2f$); after removing it from both variables, temperature and tree density remain weakly negatively related (partial
+$\rho=%(u7t).2f$, circular-shift $p=%(u7tp).3f$; canopy: $%(u7c).2f$, $p=%(u7cp).3f$).
+For planning we rank stretches by a priority score, the robust $z$-score of temperature minus that of $\log(1+$trees per km$)$.
+%(u7o)d of its top ten are among the ten hottest stretches, and %(u7s)d of its top fifteen stay in the top fifteen in at least 75\%%
+of 1,000 resamples of the trips covering each stretch (Table~\ref{tab:priority}). Two of the top fifteen (km 42 and 87) lie in the rural middle of the route, where they rank high because no tree was detected rather than because they are hot.
+
+\input{sections/tab_priority}
+""" % dict(**UX, ntr=sum(v['split'] == 'train' for v in LB.values()), nva=sum(v['split'] == 'val' for v in LB.values()),
            nbox=sum(len(v['lines']) for v in LB.values()), vb=HV['hwb_s0'], va=HV['hwa_s0'], nps=f"{PI['pseudo_photos']:,}", vc=HV['hwc_s0'],
            nte=HT['n_trees'], nph=HT['n_photos'], new=HT['new']['mean'] * 100, nlo=HT['new']['ci95'][0] * 100, nhi=HT['new']['ci95'][1] * 100,
            old=HT['old']['mean'] * 100, olo=HT['old']['ci95'][0] * 100, ohi=HT['old']['ci95'][1] * 100,

@@ -1,0 +1,172 @@
+{
+ "point": {
+  "first_detector": {
+   "AP4": 0.4906,
+   "recall": 0.7945,
+   "AP4_strict": 0.4493,
+   "recall_strict": 0.6331,
+   "n_trees": 10771
+  },
+  "retrained_box": {
+   "AP4": 0.6405,
+   "recall": 0.8513,
+   "AP4_strict": 0.5653,
+   "recall_strict": 0.6969,
+   "n_trees": 11750
+  },
+  "pose_box_bottom_B": {
+   "AP4": 0.6661,
+   "recall": 0.8797,
+   "AP4_strict": 0.5839,
+   "recall_strict": 0.7321,
+   "n_trees": 14561
+  },
+  "pose_keypoint_K": {
+   "AP4": 0.6557,
+   "recall": 0.8306,
+   "AP4_strict": 0.5625,
+   "recall_strict": 0.6778,
+   "n_trees": 11349
+  },
+  "depth_as_is": {
+   "AP4": 0.0124,
+   "recall": 0.1055,
+   "AP4_strict": 0.0123,
+   "recall_strict": 0.0793,
+   "n_trees": 4614
+  }
+ },
+ "ci95": {
+  "first_detector": {
+   "official": [
+    0.4377,
+    0.5314
+   ],
+   "strict": [
+    0.4035,
+    0.4831
+   ]
+  },
+  "retrained_box": {
+   "official": [
+    0.5733,
+    0.688
+   ],
+   "strict": [
+    0.5139,
+    0.6009
+   ]
+  },
+  "pose_box_bottom_B": {
+   "official": [
+    0.6066,
+    0.7067
+   ],
+   "strict": [
+    0.5338,
+    0.619
+   ]
+  },
+  "pose_keypoint_K": {
+   "official": [
+    0.5909,
+    0.7008
+   ],
+   "strict": [
+    0.5118,
+    0.5985
+   ]
+  },
+  "depth_as_is": {
+   "official": [
+    0.0096,
+    0.016
+   ],
+   "strict": [
+    0.0094,
+    0.0155
+   ]
+  }
+ },
+ "paired_differences": {
+  "pose_keypoint_K_minus_pose_box_bottom_B": {
+   "official": {
+    "ci95": [
+     -0.0248,
+     0.0006
+    ],
+    "share_positive": 0.028
+   },
+   "strict": {
+    "ci95": [
+     -0.029,
+     -0.0136
+    ],
+    "share_positive": 0.0
+   }
+  },
+  "retrained_box_minus_first_detector": {
+   "official": {
+    "ci95": [
+     0.1256,
+     0.1746
+    ],
+    "share_positive": 1.0
+   },
+   "strict": {
+    "ci95": [
+     0.1012,
+     0.1276
+    ],
+    "share_positive": 1.0
+   }
+  },
+  "pose_box_bottom_B_minus_retrained_box": {
+   "official": {
+    "ci95": [
+     0.014,
+     0.0426
+    ],
+    "share_positive": 1.0
+   },
+   "strict": {
+    "ci95": [
+     0.012,
+     0.0283
+    ],
+    "share_positive": 1.0
+   }
+  }
+ },
+ "share_above_branson_0581": {
+  "first_detector": 0.0,
+  "retrained_box": 0.958,
+  "pose_box_bottom_B": 0.998,
+  "pose_keypoint_K": 0.984,
+  "depth_as_is": 0.0
+ },
+ "sd": {
+  "first_detector": {
+   "official": 0.0253,
+   "strict": 0.0201
+  },
+  "retrained_box": {
+   "official": 0.0278,
+   "strict": 0.0214
+  },
+  "pose_box_bottom_B": {
+   "official": 0.0251,
+   "strict": 0.0205
+  },
+  "pose_keypoint_K": {
+   "official": 0.0267,
+   "strict": 0.0211
+  },
+  "depth_as_is": {
+   "official": 0.0016,
+   "strict": 0.0015
+  }
+ },
+ "n_rep": 500,
+ "n_blocks": 82
+}

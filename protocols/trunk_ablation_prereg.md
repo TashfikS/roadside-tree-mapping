@@ -52,3 +52,9 @@ box-only detector; the Bangladesh field distances used the annotator's click). T
 - Test result (applied once): AP@4 m K 0.6557, B 0.6661 (validation: K 0.6279, B 0.6645). K is not better by the rule.
 - The paired bootstrap uses 100 instead of 500 resamples (each resample takes > 20 s on the available CPU). The decision
   does not depend on it, because the point difference is negative; the interval is reported as descriptive.
+
+## Amendment 3 (26 Oct 2026)
+- The exact fast scorer (audit/fast_ap.py, identical to the official evaluator to 1e-9) makes the originally specified 500
+  paired resamples feasible. They are reported as the primary interval (src/pas_table_bootstrap.py, seed 20261026):
+  K - B = -0.010, 95 % interval -0.025 to +0.001 (official); -0.021, -0.029 to -0.014 (strict). The 100-resample interval of
+  amendment 2 (-0.027 to -0.002) is superseded. The decision is unchanged: K is not better.

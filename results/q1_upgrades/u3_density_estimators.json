@@ -1,0 +1,42 @@
+{
+ "as_detected": {
+  "hottest10_median": 1.7,
+  "coolest10_median": 22.53,
+  "canopy": [
+   0.481985,
+   0.0042
+  ],
+  "lst": [
+   -0.210734,
+   0.2417
+  ]
+ },
+ "protocol_div_recall": {
+  "hottest10_median": 2.89,
+  "coolest10_median": 38.31,
+  "canopy": [
+   0.481985,
+   0.0042
+  ],
+  "lst": [
+   -0.210734,
+   0.2417
+  ]
+ },
+ "window_adjusted": {
+  "hottest10_median": 1.52,
+  "coolest10_median": 20.17,
+  "canopy": [
+   0.481985,
+   0.0042
+  ],
+  "lst": [
+   -0.210734,
+   0.2417
+  ]
+ },
+ "factors": {
+  "protocol": 1.7006802721088436,
+  "window": 0.8953758718677345
+ }
+}

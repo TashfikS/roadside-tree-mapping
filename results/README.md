@@ -31,3 +31,14 @@ numbers are read from these files.
 | `field_keypoint_ablation.csv`, `field_bias_analysis.json` | Keypoint vs box bottom on the field photos; ground-offset / tilt reading of the field distance bias |
 | `keypoint_offset_comparison.json` | Median distance between keypoint and box bottom in Pasadena and Bangladesh detections |
 
+
+## q1_upgrades/ (analyses added in revision; rules in protocols/q1_upgrades_prereg.md)
+| File | Content |
+|---|---|
+| `u1_u2_keypoint.json` | Keypoint vs box bottom for runs s0 and s1 against reviewed and blind points; range error from vertical pixel error; same-annotator repeatability |
+| `u3_density_estimators.json` | Highway trees per km: as detected, protocol (divided by recall 0.588), 2-20 m window adjusted |
+| `u4_vlm_high_purity.json` | Second look with the stricter (keep >= 50 %) threshold, test once |
+| `u5_trip_accumulation.json` | Agreement with canopy as trips are combined |
+| `s2_ndvi_1km.csv`, `s2_scenes.csv`, `u6_sentinel2.json` | Sentinel-2 dry-season NDVI per km (2023/24, 2024/25) and its agreement with tree density |
+| `u7_heat_priority.json` | Heat vs density net of distance to the cities; priority ranking with trip-bootstrap stability |
+| `pas_table.json` | All Pasadena maps: AP@4 m with one paired 400 m block bootstrap (500 resamples) |

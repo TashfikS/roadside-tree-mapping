@@ -1,0 +1,217 @@
+{
+ "s0_reviewed": {
+  "n": 483,
+  "keypoint_median_px": 20.6,
+  "boxbottom_median_px": 57.6,
+  "keypoint_closer": 0.888,
+  "wilcoxon_p": 6.118174271506098e-66
+ },
+ "s0_blind": {
+  "n": 122,
+  "keypoint_median_px": 18.9,
+  "boxbottom_median_px": 61.6,
+  "keypoint_closer": 0.893,
+  "wilcoxon_p": 5.635260798016461e-18
+ },
+ "s1_reviewed": {
+  "n": 383,
+  "keypoint_median_px": 21.7,
+  "boxbottom_median_px": 62.6,
+  "keypoint_closer": 0.914,
+  "wilcoxon_p": 1.6965928070476236e-56,
+  "range_err_h1.5_D5": {
+   "keypoint_median_m": 0.2,
+   "keypoint_iqr": [
+    0.09,
+    0.46
+   ],
+   "boxbottom_median_m": 0.44,
+   "boxbottom_iqr": [
+    0.28,
+    0.75
+   ],
+   "share_gt4m_keypoint": 0.0,
+   "share_gt4m_boxbottom": 0.0,
+   "wilcoxon_p": 4.956924975521166e-41
+  },
+  "range_err_h1.5_D10": {
+   "keypoint_median_m": 0.82,
+   "keypoint_iqr": [
+    0.37,
+    1.84
+   ],
+   "boxbottom_median_m": 1.77,
+   "boxbottom_iqr": [
+    1.13,
+    3.02
+   ],
+   "share_gt4m_keypoint": 0.055,
+   "share_gt4m_boxbottom": 0.162,
+   "wilcoxon_p": 4.956924975521166e-41
+  },
+  "range_err_h1.5_D15": {
+   "keypoint_median_m": 1.84,
+   "keypoint_iqr": [
+    0.83,
+    4.14
+   ],
+   "boxbottom_median_m": 3.98,
+   "boxbottom_iqr": [
+    2.55,
+    6.79
+   ],
+   "share_gt4m_keypoint": 0.261,
+   "share_gt4m_boxbottom": 0.499,
+   "wilcoxon_p": 4.987860853115457e-41
+  },
+  "range_err_h3.0_D5": {
+   "keypoint_median_m": 0.1,
+   "keypoint_iqr": [
+    0.05,
+    0.23
+   ],
+   "boxbottom_median_m": 0.22,
+   "boxbottom_iqr": [
+    0.14,
+    0.38
+   ],
+   "share_gt4m_keypoint": 0.0,
+   "share_gt4m_boxbottom": 0.0,
+   "wilcoxon_p": 4.956924975521166e-41
+  },
+  "range_err_h3.0_D10": {
+   "keypoint_median_m": 0.41,
+   "keypoint_iqr": [
+    0.18,
+    0.92
+   ],
+   "boxbottom_median_m": 0.88,
+   "boxbottom_iqr": [
+    0.57,
+    1.51
+   ],
+   "share_gt4m_keypoint": 0.01,
+   "share_gt4m_boxbottom": 0.023,
+   "wilcoxon_p": 4.956924975521166e-41
+  },
+  "range_err_h3.0_D15": {
+   "keypoint_median_m": 0.92,
+   "keypoint_iqr": [
+    0.41,
+    2.07
+   ],
+   "boxbottom_median_m": 1.99,
+   "boxbottom_iqr": [
+    1.28,
+    3.39
+   ],
+   "share_gt4m_keypoint": 0.073,
+   "share_gt4m_boxbottom": 0.204,
+   "wilcoxon_p": 4.987860853115457e-41
+  }
+ },
+ "s1_blind": {
+  "n": 94,
+  "keypoint_median_px": 23.0,
+  "boxbottom_median_px": 75.6,
+  "keypoint_closer": 0.947,
+  "wilcoxon_p": 6.517850726187648e-16,
+  "range_err_h1.5_D5": {
+   "keypoint_median_m": 0.21,
+   "keypoint_iqr": [
+    0.08,
+    0.44
+   ],
+   "boxbottom_median_m": 0.61,
+   "boxbottom_iqr": [
+    0.41,
+    0.82
+   ],
+   "share_gt4m_keypoint": 0.0,
+   "share_gt4m_boxbottom": 0.0,
+   "wilcoxon_p": 2.5064217058491854e-15
+  },
+  "range_err_h1.5_D10": {
+   "keypoint_median_m": 0.85,
+   "keypoint_iqr": [
+    0.31,
+    1.75
+   ],
+   "boxbottom_median_m": 2.43,
+   "boxbottom_iqr": [
+    1.65,
+    3.29
+   ],
+   "share_gt4m_keypoint": 0.043,
+   "share_gt4m_boxbottom": 0.16,
+   "wilcoxon_p": 2.5064217058491854e-15
+  },
+  "range_err_h1.5_D15": {
+   "keypoint_median_m": 1.91,
+   "keypoint_iqr": [
+    0.7,
+    3.94
+   ],
+   "boxbottom_median_m": 5.46,
+   "boxbottom_iqr": [
+    3.71,
+    7.4
+   ],
+   "share_gt4m_keypoint": 0.234,
+   "share_gt4m_boxbottom": 0.713,
+   "wilcoxon_p": 2.5064217058491854e-15
+  },
+  "range_err_h3.0_D5": {
+   "keypoint_median_m": 0.11,
+   "keypoint_iqr": [
+    0.04,
+    0.22
+   ],
+   "boxbottom_median_m": 0.3,
+   "boxbottom_iqr": [
+    0.21,
+    0.41
+   ],
+   "share_gt4m_keypoint": 0.0,
+   "share_gt4m_boxbottom": 0.0,
+   "wilcoxon_p": 2.5064217058491854e-15
+  },
+  "range_err_h3.0_D10": {
+   "keypoint_median_m": 0.42,
+   "keypoint_iqr": [
+    0.16,
+    0.88
+   ],
+   "boxbottom_median_m": 1.21,
+   "boxbottom_iqr": [
+    0.83,
+    1.64
+   ],
+   "share_gt4m_keypoint": 0.011,
+   "share_gt4m_boxbottom": 0.032,
+   "wilcoxon_p": 2.5064217058491854e-15
+  },
+  "range_err_h3.0_D15": {
+   "keypoint_median_m": 0.95,
+   "keypoint_iqr": [
+    0.35,
+    1.97
+   ],
+   "boxbottom_median_m": 2.73,
+   "boxbottom_iqr": [
+    1.86,
+    3.7
+   ],
+   "share_gt4m_keypoint": 0.043,
+   "share_gt4m_boxbottom": 0.234,
+   "wilcoxon_p": 2.5064217058491854e-15
+  }
+ },
+ "repeatability": {
+  "n": 190,
+  "median_px": 9.0,
+  "rmse_px": 17.5,
+  "p95_px": 36.2
+ },
+ "assumption": "f = image width / 2 (90 deg horizontal field of view assumed; screenshots carry no focal length); level camera, first-order error."
+}

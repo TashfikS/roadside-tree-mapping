@@ -161,9 +161,9 @@ OUT_ = {"claim": "Each stage is checked against an independent answer key: map p
                    {"letter": "c", "role": "evidence", "row": 1, "col": 0, "colspan": 6, "chart_family": "scatter", "message": "Bangladesh distances", "data_vid": None, "ask": ""},
                    {"letter": "d", "role": "evidence", "row": 1, "col": 6, "colspan": 6, "chart_family": "dot plot", "message": "Planting gaps", "data_vid": None, "ask": ""}]}
 
-AVF = json.load(open('../results/audit/audit_values.json')); _BO = AVF['e2_bootstrap']['bootstrap_400m_blocks']
-rows = [('Ours, retrained detector', AVF['e2_point']['retrained (final)']['AP4_official'], C_OURS, 'o', _BO['pas_student_test_trees.csv']['official']['ci95']),
-        ('Ours, first detector', AVF['e2_point']['first detector, validation-chosen merge']['AP4_official'], C_OURS, 'o', _BO['pas_e2_test_trees_dedup.csv']['official']['ci95']),
+AVF = json.load(open('../results/audit/audit_values.json')); _PT = json.load(open('../results/q1_upgrades/pas_table.json'))
+rows = [('Ours, retrained detector', AVF['e2_point']['retrained (final)']['AP4_official'], C_OURS, 'o', _PT['ci95']['retrained_box']['official']),
+        ('Ours, first detector', AVF['e2_point']['first detector, validation-chosen merge']['AP4_official'], C_OURS, 'o', _PT['ci95']['first_detector']['official']),
         (f"Depth model × {ps['k']:.2f}\n(fitted on surveyed trees)", ps['test']['AP_4m'], C_DEPTH, 'o', None),
         ('Depth model, as is', p['test_depth']['AP_4m'], C_DEPTH, 'o', None),
         ('Branson et al. 2018,\nstreet view only*', 0.581, C_BASE, 'D', None)]

@@ -1,0 +1,26 @@
+{
+ "threshold": 0.01542,
+ "val": {
+  "precision": 0.56,
+  "kept": 0.512,
+  "unfiltered": 0.41
+ },
+ "test": {
+  "precision": 0.63,
+  "unfiltered": 0.459,
+  "gain_pp": 17.1,
+  "ci_pp": [
+   14.4,
+   19.8
+  ],
+  "kept": 0.567,
+  "removed": 0.587,
+  "n": 3321,
+  "sides": 765
+ },
+ "default_80": {
+  "threshold": 0.15203,
+  "test_precision": 0.5399239543726235,
+  "test_kept": 0.8380327868852459
+ }
+}
